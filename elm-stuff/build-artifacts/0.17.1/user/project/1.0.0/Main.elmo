@@ -1,0 +1,24 @@
+var _user$project$Main$update = F2(
+	function (msg, model) {
+		var _p0 = msg;
+		return _elm_lang$core$Native_Utils.update(
+			model,
+			{num: 1});
+	});
+var _user$project$Main$view = function (model) {
+	return A2(
+		_elm_lang$html$Html$div,
+		_elm_lang$core$Native_List.fromArray(
+			[]),
+		_elm_lang$core$Native_List.fromArray(
+			[_user$project$View$layout]));
+};
+var _user$project$Main$model = {num: 0};
+var _user$project$Main$main = {
+	main: _elm_lang$html$Html_App$beginnerProgram(
+		{model: _user$project$Main$model, update: _user$project$Main$update, view: _user$project$Main$view})
+};
+var _user$project$Main$Model = function (a) {
+	return {num: a};
+};
+var _user$project$Main$Sure = {ctor: 'Sure'};
