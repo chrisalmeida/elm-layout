@@ -1,9 +1,17 @@
+var _user$project$Main$urlUpdate = F2(
+	function (result, model) {
+		return {
+			ctor: '_Tuple2',
+			_0: _elm_lang$core$Native_Utils.update(
+				model,
+				{route: result}),
+			_1: _elm_lang$core$Platform_Cmd$none
+		};
+	});
 var _user$project$Main$update = F2(
 	function (msg, model) {
 		var _p0 = msg;
-		return _elm_lang$core$Native_Utils.update(
-			model,
-			{num: 1});
+		return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 	});
 var _user$project$Main$view = function (model) {
 	return A2(
@@ -11,14 +19,39 @@ var _user$project$Main$view = function (model) {
 		_elm_lang$core$Native_List.fromArray(
 			[]),
 		_elm_lang$core$Native_List.fromArray(
-			[_user$project$View$layout]));
+			[
+				_user$project$View$layout,
+				A2(
+				_elm_lang$html$Html$div,
+				_elm_lang$core$Native_List.fromArray(
+					[]),
+				_elm_lang$core$Native_List.fromArray(
+					[
+						_elm_lang$html$Html$text(
+						_elm_lang$core$Basics$toString(model))
+					]))
+			]));
 };
-var _user$project$Main$model = {num: 0};
+var _user$project$Main$model = {route: ''};
+var _user$project$Main$init = function (result) {
+	return A2(_user$project$Main$urlUpdate, result, _user$project$Main$model);
+};
 var _user$project$Main$main = {
-	main: _elm_lang$html$Html_App$beginnerProgram(
-		{model: _user$project$Main$model, update: _user$project$Main$update, view: _user$project$Main$view})
+	main: A2(
+		_elm_lang$navigation$Navigation$program,
+		_user$project$Router$urlParser,
+		{
+			init: _user$project$Main$init,
+			view: _user$project$Main$view,
+			update: _user$project$Main$update,
+			urlUpdate: _user$project$Main$urlUpdate,
+			subscriptions: function (_p1) {
+				return _elm_lang$core$Platform_Sub$none;
+			}
+		})
 };
 var _user$project$Main$Model = function (a) {
-	return {num: a};
+	return {route: a};
 };
-var _user$project$Main$Sure = {ctor: 'Sure'};
+var _user$project$Main$IndexPath = {ctor: 'IndexPath'};
+var _user$project$Main$ClientPath = {ctor: 'ClientPath'};

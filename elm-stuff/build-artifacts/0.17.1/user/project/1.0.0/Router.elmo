@@ -1,0 +1,22 @@
+var _user$project$Router$fromUrl = function (url) {
+	return _elm_lang$core$Basics$toString(
+		A2(_elm_lang$core$String$dropLeft, 2, url));
+};
+var _user$project$Router$urlParser = _elm_lang$navigation$Navigation$makeParser(
+	function (_p0) {
+		return _user$project$Router$fromUrl(
+			function (_) {
+				return _.hash;
+			}(_p0));
+	});
+var _user$project$Router$toUrl = function (parsedpath) {
+	return A2(
+		_elm_lang$core$Basics_ops['++'],
+		'#/',
+		_elm_lang$core$Basics$toString(parsedpath));
+};
+var _user$project$Router$Model = function (a) {
+	return {route: a};
+};
+var _user$project$Router$IndexPath = {ctor: 'IndexPath'};
+var _user$project$Router$ClientPath = {ctor: 'ClientPath'};
